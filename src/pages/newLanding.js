@@ -16,14 +16,14 @@ function NewLanding() {
         marginTop="40"
         textDecoration="underline"
         fontStyle="italic"
-        color="secondaryBackground"
+        color="text"
       >
         TheAroidHouse
       </Heading>
 
       <Landing />
 
-      <Text marginTop="4" fontSize="xl" color="secondaryBackground">
+      <Text marginTop="4" fontSize="xl" color="text">
         We try to make gardening simple
       </Text>
 

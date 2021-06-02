@@ -6,12 +6,12 @@ const MotionButton = motion(Button);
 export const BigButton = (props) => {
   return (
     <MotionButton
-      backgroundColor="primary"
+      backgroundColor="buttonBackground"
       textColor="background"
       fontSize="lg"
       width="25vw"
       _hover={{
-        backgroundColor: "#CC9400",
+        backgroundColor: "buttonBackgroundHover",
       }}
       padding="7"
       borderRadius="5"

@@ -9,9 +9,10 @@ const theme = extendTheme({
   fonts,
   colors: {
     background: "#F8FAF8",
-    primary: "#FFBA00",
-    secondary: "#BBCBC2",
-    secondaryBackground: "#0C3B2E",
+    buttonBackground: "#FFBA00",
+    buttonBackgroundHover: "#CC9400",
+    secondaryBackground: "#BBCBC2",
+    text: "#0C3B2E",
   },
 });
 
