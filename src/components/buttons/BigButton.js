@@ -8,13 +8,13 @@ export const BigButton = (props) => {
     <MotionButton
       backgroundColor="primary"
       textColor="background"
-      fontSize="20"
-      width="30vw"
+      fontSize="lg"
+      width="25vw"
       _hover={{
-        backgroundColor: "primary",
+        backgroundColor: "#CC9400",
       }}
       padding="7"
-      borderRadius="20"
+      borderRadius="5"
       whileHover={{ scale: 1.1 }}
       {...props}
     >
