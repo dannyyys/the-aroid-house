@@ -1,4 +1,5 @@
-import { Container, Stack } from "@chakra-ui/react";
+import Link from "next/link";
+import { Button, Container, Stack } from "@chakra-ui/react";
 
 import ShopItemCard from "./cards/ShopItemCard";
 
@@ -12,7 +13,9 @@ const ShopItems = () => {
         justifyContent="center"
         spacing="6"
       >
-        <ShopItemCard />
+        <Link href="/shop/itemTitle" passHref>
+          <ShopItemCard />
+        </Link>
         <ShopItemCard />
         <ShopItemCard />
         <ShopItemCard />
