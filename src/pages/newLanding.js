@@ -27,7 +27,9 @@ function NewLanding() {
         We try to make gardening simple
       </Text>
 
-      <BigButton marginTop="10" />
+      <Link href="/shop">
+        <BigButton marginTop="10" />
+      </Link>
     </Flex>
   );
 }

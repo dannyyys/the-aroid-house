@@ -1,4 +1,5 @@
-import { Button, Link } from "@chakra-ui/react";
+import Link from "next/link";
+import { Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionButton = motion(Button);
@@ -9,7 +10,7 @@ export const BigButton = (props) => {
       backgroundColor="buttonBackground"
       textColor="background"
       fontSize="lg"
-      width="25vw"
+      width={["50vw", "25vw"]}
       _hover={{
         backgroundColor: "buttonBackgroundHover",
       }}

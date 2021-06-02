@@ -1,4 +1,4 @@
-import { Box, Flex, Button, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, Button, Spacer, Heading } from "@chakra-ui/react";
 import { GrCart } from "react-icons/gr";
 import Link from "next/link";
 
@@ -12,18 +12,19 @@ export const Header = () => {
     >
       <Link href="/">
         <Box fontStyle="italic" as="button">
-          <Text
-            fontStyle="heading"
-            fontSize="20"
+          <Heading
+            fontSize="xl"
             fontStyle="italic"
-            color="secondaryBackground"
-            as="u"
+            textDecoration="underline"
+            color="text"
           >
             TheAroidHouse
-          </Text>
+          </Heading>
         </Box>
       </Link>
+
       <Spacer />
+
       <Link href="/cart">
         <Button>
           <GrCart />
