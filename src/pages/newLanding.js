@@ -12,7 +12,12 @@ function NewLanding() {
       alignItems="center"
       backgroundColor="background"
     >
-      <Heading marginTop="40" fontStyle="italic" color="secondaryBackground">
+      <Heading
+        marginTop="40"
+        textDecoration="underline"
+        fontStyle="italic"
+        color="secondaryBackground"
+      >
         TheAroidHouse
       </Heading>
 
