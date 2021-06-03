@@ -19,7 +19,7 @@ export const BigButton = (props) => {
       whileHover={{ scale: 1.1 }}
       {...props}
     >
-      Shop
+      {props.name}
     </MotionButton>
   );
 };
