@@ -34,7 +34,7 @@ function checkout() {
       <HeaderCheckout />
       <Flex
         backgroundColor="text"
-        height="full"
+        height="100vh"
         borderRadius="20px 20px 0px 0px"
         direction="column"
         //padding="5"
@@ -60,9 +60,11 @@ function checkout() {
           </TabList>
           <TabPanels>
             <TabPanel color="white">
-              <Details />
+              <Center>
+                <Details />
+              </Center>
             </TabPanel>
-            <TabPanel color="white">
+            <TabPanel color="white" backgroundColor="text">
               <Center>
                 <Payment />
               </Center>
