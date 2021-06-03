@@ -34,11 +34,11 @@ function ShopItemDetails() {
           Cart
         </Heading>
         <CartItem />
-        <Divider />
+
         <CartItem />
-        <Divider />
+
         <DeliveryOption />
-        <Divider />
+
         <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
           <chakra.h3 fontSize="md" color="white">
             Total
