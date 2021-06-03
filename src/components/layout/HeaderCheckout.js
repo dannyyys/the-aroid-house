@@ -7,11 +7,11 @@ import {
   chakra,
   Icon,
 } from "@chakra-ui/react";
-import { GrCart } from "react-icons/gr";
-import Link from "next/link";
-import Cart from "../buttons/Cart";
 
-export const HeaderWhite = () => {
+import Link from "next/link";
+import CartButton from "../buttons/CartButton";
+
+export const HeaderCheckout = () => {
   return (
     <Flex direction="row" padding="5" align="center">
       <Link href="/">
@@ -20,7 +20,7 @@ export const HeaderWhite = () => {
             fontSize="xl"
             fontStyle="italic"
             textDecoration="underline"
-            color="background"
+            color="text"
           >
             TheAroidHouse
           </Heading>
@@ -28,10 +28,9 @@ export const HeaderWhite = () => {
       </Link>
 
       <Spacer />
-
-      <Link href="/cart" passHref>
-        <Cart />
-      </Link>
+      <Heading fontSize="lg" color="text">
+        Check Out
+      </Heading>
     </Flex>
   );
 };
