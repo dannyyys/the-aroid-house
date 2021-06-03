@@ -12,7 +12,7 @@ export default function Landing() {
       autoplay
       loop
       mode="normal"
-      src="https://assets6.lottiefiles.com/private_files/lf30_nivslwok.json"
+      src="https://assets10.lottiefiles.com/packages/lf20_o6hQ8m.json"
       style={{ width: "350px", height: "350px" }}
     ></lottie-player>
   );
