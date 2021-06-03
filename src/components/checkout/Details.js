@@ -61,6 +61,20 @@ const Details = () => {
       </Flex>
       <Flex direction="row" padding="2" align="center">
         <chakra.h3 fontSize="md" color="white">
+          Email
+        </chakra.h3>
+        <Spacer />
+        <Input
+          //placeholder="medium size"
+          size="sm"
+          width="50vw"
+          backgroundColor="white"
+          border="1px"
+          borderColor="black"
+        />
+      </Flex>
+      <Flex direction="row" padding="2" align="center">
+        <chakra.h3 fontSize="md" color="white">
           Address
         </chakra.h3>
         <Spacer />
