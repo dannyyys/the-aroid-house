@@ -45,16 +45,16 @@ function checkout() {
           <Tabs variant="enclosed" isFitted>
             <TabList>
               <Tab
-                textColor="white"
-                _selected={{ color: "white", bg: "text" }}
+                textColor="background"
+                _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="20px 0px 0px 0px"
               >
                 One
               </Tab>
               <Tab
-                textColor="white"
-                _selected={{ color: "white", bg: "text" }}
+                textColor="background"
+                _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="0px 20px 0px 0px"
               >
@@ -62,12 +62,12 @@ function checkout() {
               </Tab>
             </TabList>
             <TabPanels>
-              <TabPanel color="white">
+              <TabPanel color="background">
                 <Center>
                   <Details />
                 </Center>
               </TabPanel>
-              <TabPanel color="white" backgroundColor="text">
+              <TabPanel color="background" backgroundColor="text">
                 <Center>
                   <Payment />
                 </Center>

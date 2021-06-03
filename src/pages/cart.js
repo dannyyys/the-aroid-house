@@ -33,7 +33,7 @@ function cart() {
           direction="column"
           padding="5"
         >
-          <Heading fontSize="xl" color="white">
+          <Heading fontSize="xl" color="background">
             Cart
           </Heading>
           <CartItem />
@@ -43,11 +43,11 @@ function cart() {
           <DeliveryOption />
 
           <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
-            <chakra.h3 fontSize="md" color="white">
+            <chakra.h3 fontSize="md" color="background">
               Total
             </chakra.h3>
             <Spacer />
-            <chakra.h3 fontSize="md" color="white">
+            <chakra.h3 fontSize="md" color="background">
               $40
             </chakra.h3>
           </Flex>

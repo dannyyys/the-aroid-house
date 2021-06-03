@@ -41,7 +41,7 @@ function thankyou() {
           <chakra.h3
             marginTop="4"
             fontSize="xl"
-            color="white"
+            color="background"
             align="center"
             //marginTop="5"
           >
@@ -50,7 +50,7 @@ function thankyou() {
 
           <ThankyouAnimation />
 
-          <chakra.h3 marginTop="4" fontSize="xl" color="white">
+          <chakra.h3 marginTop="4" fontSize="xl" color="background">
             Check your email for your invoice.
           </chakra.h3>
 

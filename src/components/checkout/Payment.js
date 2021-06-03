@@ -36,44 +36,44 @@ const Payment = () => {
       width={["100vw", "55vw"]}
     >
       <Flex direction={["column", "row"]}>
-        <chakra.h3 fontSize="lg" color="white" textDecoration="underline">
+        <chakra.h3 fontSize="lg" color="background" textDecoration="underline">
           Name
         </chakra.h3>
         <Spacer />
-        <chakra.h3 fontSize="md" color="white" padding="2">
+        <chakra.h3 fontSize="md" color="background" padding="2">
           Danny
         </chakra.h3>
       </Flex>
       <Flex direction={["column", "row"]}>
-        <chakra.h3 fontSize="lg" color="white" textDecoration="underline">
+        <chakra.h3 fontSize="lg" color="background" textDecoration="underline">
           Contact number
         </chakra.h3>
         <Spacer />
-        <chakra.h3 fontSize="md" color="white" padding="2">
+        <chakra.h3 fontSize="md" color="background" padding="2">
           9558 6659
         </chakra.h3>
       </Flex>
       <Flex direction={["column", "row"]}>
-        <chakra.h3 fontSize="lg" color="white" textDecoration="underline">
+        <chakra.h3 fontSize="lg" color="background" textDecoration="underline">
           Address
         </chakra.h3>
         <Spacer />
-        <Box fontSize="md" color="white" padding="2">
+        <Box fontSize="md" color="background" padding="2">
           blk 999 tampines ave 6 #12-55 (s)663699
         </Box>
       </Flex>
-      <chakra.h3 fontSize="2xl" color="white">
+      <chakra.h3 fontSize="2xl" color="background">
         Items
       </chakra.h3>
       <Divider width={["80vw", "55vw"]} />
       <Item />
       <Item />
       <Flex direction="row" paddingBottom="2" width={["80vw", "55vw"]}>
-        <chakra.h3 color="white" fontSize="lg">
+        <chakra.h3 color="background" fontSize="lg">
           Delivery
         </chakra.h3>
         <Spacer />
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           $10
         </chakra.h3>
       </Flex>
@@ -84,16 +84,16 @@ const Payment = () => {
         paddingTop="2"
         width={["80vw", "55vw"]}
       >
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           Total
         </chakra.h3>
         <Spacer />
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           $40
         </chakra.h3>
       </Flex>
       <Center padding="5">
-        <chakra.h3 fontSize="3xl" color="white">
+        <chakra.h3 fontSize="3xl" color="background">
           UUID: danny6659
         </chakra.h3>
       </Center>

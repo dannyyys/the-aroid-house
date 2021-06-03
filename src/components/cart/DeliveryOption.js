@@ -12,20 +12,20 @@ const DeliveryOption = () => {
         paddingBottom="2"
       >
         <Flex direction="row">
-          <Checkbox color="white" size="lg">
+          <Checkbox color="background" size="lg">
             Self collect
           </Checkbox>
           <Spacer />
-          <chakra.h3 fontSize="md" color="white">
+          <chakra.h3 fontSize="md" color="background">
             $0
           </chakra.h3>
         </Flex>
         <Flex direction="row">
-          <Checkbox color="white" size="lg">
+          <Checkbox color="background" size="lg">
             Delivery
           </Checkbox>
           <Spacer />
-          <chakra.h3 fontSize="md" color="white">
+          <chakra.h3 fontSize="md" color="background">
             $10
           </chakra.h3>
         </Flex>

@@ -28,7 +28,7 @@ const Instructions = () => {
       paddingTop="2"
       paddingBottom="2"
     >
-      <chakra.h3 fontSize="xl" color="white" textDecoration="underline">
+      <chakra.h3 fontSize="xl" color="background" textDecoration="underline">
         To complete transaction
       </chakra.h3>
       <UnorderedList>

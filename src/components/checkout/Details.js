@@ -29,24 +29,24 @@ const Details = () => {
       paddingBottom="2"
       height="full"
     >
-      <chakra.h3 fontSize="xl" color="white">
+      <chakra.h3 fontSize="xl" color="background">
         Contact details
       </chakra.h3>
       <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           Name
         </chakra.h3>
         <Spacer />
         <Input //placeholder="medium size"
           size="sm"
           width="50vw"
-          backgroundColor="white"
+          backgroundColor="background"
           border="1px"
           borderColor="black"
         />
       </Flex>
       <Flex direction="row" align="center" padding="2">
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           Contact
         </chakra.h3>
         <Spacer />
@@ -54,13 +54,13 @@ const Details = () => {
           //placeholder="medium size"
           size="sm"
           width="50vw"
-          backgroundColor="white"
+          backgroundColor="background"
           border="1px"
           borderColor="black"
         />
       </Flex>
       <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           Email
         </chakra.h3>
         <Spacer />
@@ -68,13 +68,13 @@ const Details = () => {
           //placeholder="medium size"
           size="sm"
           width="50vw"
-          backgroundColor="white"
+          backgroundColor="background"
           border="1px"
           borderColor="black"
         />
       </Flex>
       <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="white">
+        <chakra.h3 fontSize="md" color="background">
           Address
         </chakra.h3>
         <Spacer />
@@ -82,7 +82,7 @@ const Details = () => {
           //placeholder="medium size"
           size="sm"
           width="50vw"
-          backgroundColor="white"
+          backgroundColor="background"
           border="1px"
           borderColor="black"
         />
