@@ -1,4 +1,4 @@
-import { Text, Flex, Center } from "@chakra-ui/react";
+import { Text, Flex, Heading } from "@chakra-ui/react";
 import { React } from "react";
 import Link from "next/link";
 
@@ -8,34 +8,31 @@ import { BigButton } from "../components/buttons/BigButton";
 import Landing from "../components/Landing";
 
 const Index = () => (
-  <Layout>
-    <Center>
-      <Flex alignItems="center" direction="column">
-        <Text
-          fontStyle="heading"
-          fontSize="35"
-          as="u"
-          fontStyle="italic"
-          color="secondaryBackground"
-        >
-          TheAroidHouse
-        </Text>
-        <Landing />
+  <Flex
+    height="100vh"
+    direction="column"
+    alignItems="center"
+    backgroundColor="background"
+  >
+    <Heading
+      marginTop="40"
+      textDecoration="underline"
+      fontStyle="italic"
+      color="text"
+    >
+      TheAroidHouse
+    </Heading>
 
-        <Text
-          margin="5"
-          fontStyle="body"
-          fontSize="20"
-          color="secondaryBackground"
-        >
-          We try to make gardening simple
-        </Text>
-        <Link href="/shop">
-          <BigButton />
-        </Link>
-      </Flex>
-    </Center>
-  </Layout>
+    <Landing />
+
+    <Text marginTop="4" fontSize="xl" color="text">
+      We try to make gardening simple
+    </Text>
+
+    <Link href="/shop">
+      <BigButton marginTop="10" />
+    </Link>
+  </Flex>
 );
 
 export default Index;
