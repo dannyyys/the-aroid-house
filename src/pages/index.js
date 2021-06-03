@@ -15,7 +15,7 @@ const Index = () => (
     backgroundColor="background"
   >
     <Heading
-      marginTop="40"
+      marginTop="20"
       textDecoration="underline"
       fontStyle="italic"
       color="text"
