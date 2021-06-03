@@ -14,7 +14,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
         w="xs"
         mx="auto"
       >
-        <Box
+        <chakra.span
           bg="gray.300"
           h="full"
           w="full"
@@ -23,14 +23,18 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
           overflow="hidden"
         >
           <Image width="100%" height="100%" src="/image.png" />
-        </Box>
-        <Box
+        </chakra.span>
+        <chakra.span
           w={{ base: 56, md: 64 }}
           backgroundColor="background"
-          mt={-10}
+          // mt={-20}
+          // mr={15}
           shadow="lg"
-          rounded="lg"
+          //rounded="lg"
+          borderRadius="25px 0px 10px 0px"
           overflow="hidden"
+          transform={["translate(22%,-100%)", "translate(13%,-100%)"]}
+          // transform="translate(13%,-100%)"
         >
           <chakra.h3
             py={2}
@@ -53,7 +57,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
               From $29
             </chakra.span>
           </Flex>
-        </Box>
+        </chakra.span>
       </Flex>
     </span>
   );
