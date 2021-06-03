@@ -50,7 +50,7 @@ function checkout() {
                 backgroundColor="secondaryBackground"
                 borderRadius="20px 0px 0px 0px"
               >
-                One
+                Contact
               </Tab>
               <Tab
                 textColor="background"
@@ -58,7 +58,7 @@ function checkout() {
                 backgroundColor="secondaryBackground"
                 borderRadius="0px 20px 0px 0px"
               >
-                Two
+                Payment
               </Tab>
             </TabList>
             <TabPanels>
