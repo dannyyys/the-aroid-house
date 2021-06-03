@@ -42,7 +42,12 @@ function cart() {
 
           <DeliveryOption />
 
-          <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
+          <Flex
+            direction="row"
+            paddingLeft="5"
+            paddingTop="2"
+            width={["80vw", "57vw"]}
+          >
             <chakra.h3 fontSize="md" color="background">
               Total
             </chakra.h3>
