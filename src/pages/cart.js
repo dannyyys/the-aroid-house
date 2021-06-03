@@ -14,7 +14,7 @@ import DeliveryOption from "../components/cart/DeliveryOption";
 import { Header } from "../components/layout/Header";
 import Link from "next/link";
 
-function ShopItemDetails() {
+function cart() {
   return (
     <Flex
       height="100vh"
@@ -58,4 +58,4 @@ function ShopItemDetails() {
   );
 }
 
-export default ShopItemDetails;
+export default cart;

@@ -23,7 +23,7 @@ import Link from "next/link";
 import Details from "../components/checkout/Details";
 import Payment from "../components/checkout/Payment";
 
-function ShopItemDetails() {
+function checkout() {
   return (
     <Flex
       height="full"
@@ -74,4 +74,4 @@ function ShopItemDetails() {
   );
 }
 
-export default ShopItemDetails;
+export default checkout;
