@@ -1,17 +1,21 @@
 import Link from "next/link";
-import { Button, Container, Stack } from "@chakra-ui/react";
+import { Button, Container, Stack, SimpleGrid } from "@chakra-ui/react";
 
 import ShopItemCard from "./cards/ShopItemCard";
 
 const ShopItems = () => {
   return (
     <Container marginTop="6">
-      <Stack
-        direction={["column", "row"]}
-        w="full"
+      <SimpleGrid
+        //direction={["column", "row"]}
+        //w={["100vw"]}
         alignItems="center"
         justifyContent="center"
-        spacing="6"
+        //spacing="6"
+        columns={[1, 2, 2]}
+        spacingX="350"
+        spacingY="6"
+        marginRight={["0", "80"]}
       >
         <Link href="/shop/itemTitle" passHref>
           <ShopItemCard />
@@ -27,7 +31,7 @@ const ShopItems = () => {
         <ShopItemCard />
         <ShopItemCard />
         <ShopItemCard />
-      </Stack>
+      </SimpleGrid>
     </Container>
   );
 };

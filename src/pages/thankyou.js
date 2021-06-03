@@ -20,42 +20,46 @@ import { BigButton } from "../components/buttons/BigButton";
 
 function thankyou() {
   return (
-    <Flex
-      height="100vh"
-      direction="column"
-      //align="center"
-      backgroundColor="background"
-    >
-      <HeaderCheckout />
+    <Center backgroundColor="background">
       <Flex
-        backgroundColor="text"
-        height="full"
-        borderRadius="20px 20px 0px 0px"
+        height="100vh"
         direction="column"
-        padding="5"
-        align="center"
+        //align="center"
+        backgroundColor="background"
+        direction="column"
+        width={["100vw", "60vw"]}
       >
-        <chakra.h3
-          marginTop="4"
-          fontSize="xl"
-          color="white"
+        <HeaderCheckout />
+        <Flex
+          backgroundColor="text"
+          height="full"
+          borderRadius="20px 20px 0px 0px"
+          direction="column"
+          padding="5"
           align="center"
-          //marginTop="5"
         >
-          Thank you for shopping with us. May your plant grow well.
-        </chakra.h3>
+          <chakra.h3
+            marginTop="4"
+            fontSize="xl"
+            color="white"
+            align="center"
+            //marginTop="5"
+          >
+            Thank you for shopping with us. May your plant grow well.
+          </chakra.h3>
 
-        <ThankyouAnimation />
+          <ThankyouAnimation />
 
-        <chakra.h3 marginTop="4" fontSize="xl" color="white">
-          Check your email for your invoice.
-        </chakra.h3>
+          <chakra.h3 marginTop="4" fontSize="xl" color="white">
+            Check your email for your invoice.
+          </chakra.h3>
 
-        <Link href="/shop">
-          <BigButton marginTop="10" name={"Back to shop"} />
-        </Link>
+          <Link href="/shop">
+            <BigButton marginTop="10" name={"Back to shop"} />
+          </Link>
+        </Flex>
       </Flex>
-    </Flex>
+    </Center>
   );
 }
 

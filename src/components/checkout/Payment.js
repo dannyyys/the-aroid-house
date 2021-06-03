@@ -21,16 +21,19 @@ import DeleteButton from "../buttons/DeleteButton";
 import { SmallButton } from "../buttons/SmallButton";
 import Instructions from "./Instructions";
 import Item from "./Item";
+import Link from "next/link";
 
 const Payment = () => {
   return (
     <Flex
       direction="column"
-      //paddingLeft="2"
-      width="80vw"
+      paddingLeft={["5", "0"]}
       paddingTop="2"
       paddingBottom="2"
       height="full"
+      //backgroundColor="text"
+
+      width={["100vw", "55vw"]}
     >
       <Flex direction={["column", "row"]}>
         <chakra.h3 fontSize="lg" color="white" textDecoration="underline">
@@ -62,10 +65,10 @@ const Payment = () => {
       <chakra.h3 fontSize="2xl" color="white">
         Items
       </chakra.h3>
-      <Divider width="80vw" />
+      <Divider width={["80vw", "55vw"]} />
       <Item />
       <Item />
-      <Flex direction="row" paddingBottom="2" width="80vw">
+      <Flex direction="row" paddingBottom="2" width={["80vw", "55vw"]}>
         <chakra.h3 color="white" fontSize="lg">
           Delivery
         </chakra.h3>
@@ -74,8 +77,13 @@ const Payment = () => {
           $10
         </chakra.h3>
       </Flex>
-      <Divider width="80vw" />
-      <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
+      <Divider width={["80vw", "55vw"]} />
+      <Flex
+        direction="row"
+        paddingLeft="5"
+        paddingTop="2"
+        width={["80vw", "55vw"]}
+      >
         <chakra.h3 fontSize="md" color="white">
           Total
         </chakra.h3>
@@ -91,10 +99,12 @@ const Payment = () => {
       </Center>
       <Instructions />
 
-      <Flex direction="row" paddingTop="5">
+      <Flex direction="row" paddingTop="5" paddingRight="5">
         <SmallButton name={"Back"} />
         <Spacer />
-        <SmallButton name={"Finish"} />
+        <Link href="/thankyou">
+          <SmallButton name={"Finish"} />
+        </Link>
       </Flex>
     </Flex>
   );

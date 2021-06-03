@@ -24,7 +24,7 @@ const Details = () => {
     <Flex
       direction="column"
       //paddingLeft="2"
-      width="80vw"
+      width={["80vw", "60vw"]}
       paddingTop="2"
       paddingBottom="2"
       height="full"

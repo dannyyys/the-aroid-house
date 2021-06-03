@@ -16,45 +16,49 @@ import Link from "next/link";
 
 function cart() {
   return (
-    <Flex
-      height="100vh"
-      direction="column"
-      //alignContent="center"
-      backgroundColor="background"
-    >
-      <Header />
+    <Center backgroundColor="background">
       <Flex
-        backgroundColor="text"
-        height="full"
-        borderRadius="20px 20px 0px 0px"
+        height="100vh"
         direction="column"
-        padding="5"
+        //alignContent="center"
+        backgroundColor="background"
+        direction="column"
+        width={["100vw", "60vw"]}
       >
-        <Heading fontSize="xl" color="white">
-          Cart
-        </Heading>
-        <CartItem />
+        <Header />
+        <Flex
+          backgroundColor="text"
+          height="full"
+          borderRadius="20px 20px 0px 0px"
+          direction="column"
+          padding="5"
+        >
+          <Heading fontSize="xl" color="white">
+            Cart
+          </Heading>
+          <CartItem />
 
-        <CartItem />
+          <CartItem />
 
-        <DeliveryOption />
+          <DeliveryOption />
 
-        <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
-          <chakra.h3 fontSize="md" color="white">
-            Total
-          </chakra.h3>
-          <Spacer />
-          <chakra.h3 fontSize="md" color="white">
-            $40
-          </chakra.h3>
+          <Flex direction="row" paddingLeft="5" paddingTop="2" width="80vw">
+            <chakra.h3 fontSize="md" color="white">
+              Total
+            </chakra.h3>
+            <Spacer />
+            <chakra.h3 fontSize="md" color="white">
+              $40
+            </chakra.h3>
+          </Flex>
+          <Center paddingTop="5">
+            <Link href="/checkout">
+              <SmallButton name={"Check Out"} />
+            </Link>
+          </Center>
         </Flex>
-        <Center paddingTop="5">
-          <Link href="/checkout">
-            <SmallButton name={"Check Out"} />
-          </Link>
-        </Center>
       </Flex>
-    </Flex>
+    </Center>
   );
 }
 

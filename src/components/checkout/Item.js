@@ -3,7 +3,7 @@ import DeleteButton from "../buttons/DeleteButton";
 
 const Item = () => {
   return (
-    <Flex direction="column" width="80vw" paddingBottom="2">
+    <Flex direction="column" width={["80vw", "55vw"]} paddingBottom="2">
       <Flex direction="row" paddingLeft="5" align="center">
         <chakra.h3 fontSize="md" color="white" paddingTop="2">
           Original moss pole
