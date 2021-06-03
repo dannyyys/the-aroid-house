@@ -13,6 +13,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
         alignItems="center"
         w="xs"
         mx="auto"
+        marginBottom={-20}
       >
         <chakra.span
           bg="gray.300"
