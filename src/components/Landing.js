@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
+import("@lottiefiles/lottie-player");
 
 export default function Landing() {
   const ref = useRef(null);
-  React.useEffect(() => {
-    import("@lottiefiles/lottie-player");
-  });
+
   return (
     <lottie-player
       id="firstLottie"
