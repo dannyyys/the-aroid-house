@@ -7,7 +7,7 @@ const DeliveryOption = () => {
       <Flex
         direction="column"
         paddingLeft="5"
-        width="80vw"
+        width={["80vw", "57vw"]}
         paddingTop="2"
         paddingBottom="2"
       >
