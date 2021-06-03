@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 
 import { SmallButton } from "../components/buttons/SmallButton";
-import CartItem from "../components/checkout/CartItem";
-import DeliveryOption from "../components/checkout/DeliveryOption";
+import CartItem from "../components/cart/CartItem";
+import DeliveryOption from "../components/cart/DeliveryOption";
 import { Header } from "../components/layout/Header";
 import Link from "next/link";
 
