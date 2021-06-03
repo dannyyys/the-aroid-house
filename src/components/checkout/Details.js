@@ -43,6 +43,7 @@ const Details = () => {
           backgroundColor="background"
           border="1px"
           borderColor="black"
+          color="text"
         />
       </Flex>
       <Flex direction="row" align="center" padding="2">
@@ -57,6 +58,7 @@ const Details = () => {
           backgroundColor="background"
           border="1px"
           borderColor="black"
+          color="text"
         />
       </Flex>
       <Flex direction="row" padding="2" align="center">
@@ -71,6 +73,7 @@ const Details = () => {
           backgroundColor="background"
           border="1px"
           borderColor="black"
+          color="text"
         />
       </Flex>
       <Flex direction="row" padding="2" align="center">
@@ -85,6 +88,7 @@ const Details = () => {
           backgroundColor="background"
           border="1px"
           borderColor="black"
+          color="text"
         />
       </Flex>
       <Center paddingTop="5">
