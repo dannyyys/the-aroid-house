@@ -34,7 +34,7 @@ export const ItemCarousel = () => {
     //     mode: "free-snap",
     //   },
     // },
-    slidesPerView: 2,
+    slidesPerView: 1,
   });
 
   useEffect(() => {

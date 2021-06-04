@@ -92,12 +92,12 @@ const Payment = () => {
           $40
         </chakra.h3>
       </Flex>
-      <Center padding="5">
+      {/* <Center padding="5">
         <chakra.h3 fontSize="3xl" color="background">
           UUID: danny6659
         </chakra.h3>
       </Center>
-      <Instructions />
+      <Instructions /> */}
 
       <Flex direction="row" paddingTop="5" paddingRight="5">
         <SmallButton name={"Back"} />

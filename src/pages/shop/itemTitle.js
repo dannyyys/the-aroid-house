@@ -1,6 +1,5 @@
 import { Center, Flex, Box } from "@chakra-ui/react";
 
-import { Layout } from "../../components/layout/layout";
 import { Header } from "../../components/layout/Header";
 import { ItemCarousel } from "../../components/item/ItemCarousel";
 import { ItemDetails } from "../../components/item/ItemDetails";
@@ -16,9 +15,9 @@ function itemTitle() {
         width={["100vw", "60vw"]}
       >
         <Header />
-        <Box>
+        <Center>
           <ItemCarousel />
-        </Box>
+        </Center>
         <Flex
           backgroundColor="text"
           height="full"
