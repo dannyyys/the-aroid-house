@@ -17,6 +17,7 @@ export const SmallButton = (props) => {
       padding="7"
       borderRadius="5"
       whileHover={{ scale: 1.1 }}
+      fontWeight="bold"
       {...props}
     >
       {props.name}

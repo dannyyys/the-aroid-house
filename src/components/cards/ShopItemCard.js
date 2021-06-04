@@ -11,7 +11,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
         direction="column"
         justifyContent="center"
         alignItems="center"
-        w="xs"
+        w="2xs"
         mx="auto"
         marginBottom={-20}
       >
@@ -26,7 +26,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
           <Image width="100%" height="100%" src="/image.png" />
         </chakra.span>
         <chakra.span
-          w={{ base: 56, md: 64 }}
+          //w={{ base: "180px", md: "205px" }}
           backgroundColor="background"
           // mt={-20}
           // mr={15}
@@ -34,7 +34,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
           //rounded="lg"
           borderRadius="25px 0px 10px 0px"
           overflow="hidden"
-          transform={["translate(22%,-100%)", "translate(13%,-100%)"]}
+          transform={["translate(24%,-100%)"]}
           // transform="translate(13%,-100%)"
         >
           <chakra.h3
@@ -44,6 +44,7 @@ const ShopItemIndividualCard = React.forwardRef(function ShopItemIndividualCard(
             textTransform="uppercase"
             textColor="text"
             letterSpacing={1}
+            paddingX="8"
           >
             Moss Plant
           </chakra.h3>

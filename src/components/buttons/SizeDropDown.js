@@ -14,7 +14,12 @@ export const SizeDropDown = () => {
       maxW="150px"
     >
       {/* <FormLabel>Country</FormLabel> */}
-      <Select placeholder="Select size" backgroundColor="background">
+      <Select
+        placeholder="Select variant"
+        backgroundColor="buttonBackground"
+        color="background"
+        fontWeight="bold"
+      >
         <option>S</option>
         <option>M</option>
         <option>L</option>

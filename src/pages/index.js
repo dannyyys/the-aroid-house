@@ -16,14 +16,14 @@ const Index = () => (
   >
     <Heading
       marginTop="20"
-      textDecoration="underline"
-      fontStyle="italic"
+      //textDecoration="underline"
+      //fontStyle="italic"
       color="text"
     >
       TheAroidHouse
     </Heading>
 
-    <Landing />
+    <Landing marginTop="10" />
 
     <Text marginTop="4" fontSize="xl" color="text">
       We try to make gardening simple

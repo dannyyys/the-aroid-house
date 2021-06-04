@@ -15,10 +15,28 @@ export const AddMinus = () => {
   const input = getInputProps({ isReadOnly: true });
 
   return (
-    <HStack maxW="150px" backgroundColor="background" borderRadius="5">
-      <Button {...inc}>+</Button>
-      <Input {...input} />
-      <Button {...dec}>-</Button>
+    <HStack
+      maxW="150px" //backgroundColor="background"
+      borderRadius="5"
+    >
+      <Button
+        backgroundColor="buttonBackground"
+        color="background"
+        fontWeight="bold"
+        {...dec}
+      >
+        -
+      </Button>
+
+      <Input backgroundColor="background" {...input} />
+      <Button
+        backgroundColor="buttonBackground"
+        color="background"
+        fontWeight="bold"
+        {...inc}
+      >
+        +
+      </Button>
     </HStack>
   );
 };
