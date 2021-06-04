@@ -10,6 +10,7 @@ export const ItemCarouselImage = ({ src }) => (
       objectFit="contain"
       height={["full"]}
       width={["full"]}
+      //boxSize="xl"
     />
   </Zoom>
 );

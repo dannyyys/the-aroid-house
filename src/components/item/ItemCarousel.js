@@ -13,27 +13,28 @@ export const ItemCarousel = () => {
     duration: 3000,
     loop: true,
     mode: "free-snap",
-    spacing: 5,
+    spacing: 50,
     dragStart: () => {
       setPause(true);
     },
     dragEnd: () => {
       setPause(false);
     },
-    breakpoints: {
-      "(min-width: 480px)": {
-        slidesPerView: 1,
-        mode: "free-snap",
-      },
-      "(min-width: 768px)": {
-        slidesPerView: 3,
-        mode: "free-snap",
-      },
-      "(min-width: 1300px)": {
-        slidesPerView: 4,
-        mode: "free-snap",
-      },
-    },
+    // breakpoints: {
+    //   "(min-width: 480px)": {
+    //     slidesPerView: 3,
+    //     mode: "free-snap",
+    //   },
+    //   "(min-width: 768px)": {
+    //     slidesPerView: 3,
+    //     mode: "free-snap",
+    //   },
+    //   "(min-width: 1300px)": {
+    //     slidesPerView: 4,
+    //     mode: "free-snap",
+    //   },
+    // },
+    slidesPerView: 2,
   });
 
   useEffect(() => {
@@ -59,14 +60,15 @@ export const ItemCarousel = () => {
   return (
     <Box
       className="keen-slider"
-      width={["100vw", "70vw"]}
+      width={["100vw", "60vw"]}
       ref={sliderRef}
-      marginTop="5"
+      //marginTop="5"
+      //objectFit="fit"
     >
       {[...Array(6)].map((_, i) => {
         return (
           <div key={i} className="keen-slider__slide">
-            <ItemCarouselImage src={`mosses/moss${i}.png`} />
+            <ItemCarouselImage src={`/mosses/moss${i}.png`} />
           </div>
         );
       })}

@@ -1,4 +1,4 @@
-import { chakra, Image, Flex, Center, Spacer } from "@chakra-ui/react";
+import { chakra, Image, Flex, Center, Spacer, VStack } from "@chakra-ui/react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import { AddMinus } from "../buttons/AddMinus";
@@ -7,14 +7,21 @@ import { SizeDropDown } from "../buttons/SizeDropDown";
 
 export const ItemDetails = () => {
   return (
-    <Flex
+    <VStack
       direction="column"
       width={["100vw", "60vw"]}
       padding="5"
       //alignSelf="center"
       align={[null, "center"]}
+      spacing="4"
     >
-      <chakra.h3 fontStyle="heading" color="background" fontSize="3xl">
+      <chakra.h3
+        fontStyle="heading"
+        color="background"
+        fontSize="3xl"
+        fontWeight="bold"
+        marginTop="5"
+      >
         Slim moss pole
       </chakra.h3>
       <chakra.h3 color="background" fontSize="xl" paddingTop="5">
@@ -23,7 +30,11 @@ export const ItemDetails = () => {
       <chakra.h3 color="background" fontSize="xl" paddingTop="5">
         Sizes:
       </chakra.h3>
-      <Flex direction="column" width={["80vw", "20vw"]}>
+      <Flex
+        direction="column"
+        justify="space-around"
+        //width={["80vw", "20vw"]}
+      >
         <Flex direction="row">
           <chakra.h3 color="background" fontSize="xl">
             1M
@@ -43,7 +54,12 @@ export const ItemDetails = () => {
           </chakra.h3>
         </Flex>
       </Flex>
-      <Flex direction="column" width={["80vw", "20vw"]} paddingTop="3">
+      <Flex
+        direction="column"
+        //width={["80vw", "20vw"]}
+        justify="space-around"
+        paddingTop="3"
+      >
         <Flex direction="row" align="center">
           <chakra.h3 color="background" fontSize="lg">
             Quantity
@@ -53,7 +69,7 @@ export const ItemDetails = () => {
         </Flex>
         <Flex direction="row" align="center" paddingTop="3">
           <chakra.h3 color="background" fontSize="lg">
-            Size
+            Variants
           </chakra.h3>
           <Spacer />
           <SizeDropDown />
@@ -62,6 +78,6 @@ export const ItemDetails = () => {
       <Center paddingTop="5">
         <BigButton name={"Add to cart"} />
       </Center>
-    </Flex>
+    </VStack>
   );
 };

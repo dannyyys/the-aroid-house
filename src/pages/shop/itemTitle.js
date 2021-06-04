@@ -9,22 +9,23 @@ function itemTitle() {
   return (
     <Center backgroundColor="background">
       <Flex
-        height="full"
+        height="100vh"
         direction="column"
         //alignContent="center"
         backgroundColor="background"
         width={["100vw", "60vw"]}
       >
         <Header />
-        {/* <Box>
+        <Box>
           <ItemCarousel />
-        </Box> */}
+        </Box>
         <Flex
           backgroundColor="text"
-          height="100vh"
+          height="full"
           borderRadius="20px 20px 0px 0px"
           direction="column"
           //padding="5"
+          //marginTop="10"
         >
           <ItemDetails />
         </Flex>
