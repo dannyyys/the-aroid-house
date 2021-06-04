@@ -2,8 +2,6 @@ import { Text, Flex, Heading } from "@chakra-ui/react";
 import { React } from "react";
 import Link from "next/link";
 
-import { Layout } from "../components/layout/layout";
-
 import { BigButton } from "../components/buttons/BigButton";
 import Landing from "../components/Landing";
 
