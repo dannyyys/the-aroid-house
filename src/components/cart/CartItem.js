@@ -1,14 +1,20 @@
 import { Flex, Spacer, chakra, Box, Divider } from "@chakra-ui/react";
 import DeleteButton from "../buttons/DeleteButton";
+import { ItemCarousel } from "../item/ItemCarousel";
+import React, { useState, useContext, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const CartItem = () => {
+const CartItem = (props) => {
+  //const [items, setItems] = useContext(CartContext);
+  //console.log(props);
+
   return (
     <Box>
       <Flex direction="row" align="center">
         <Flex direction="column" width="80vw" paddingBottom="2">
           <Flex direction="row" paddingLeft="5" align="center">
             <chakra.h3 fontSize="md" color="background" paddingTop="2">
-              Original moss pole
+              {props.item.name}
             </chakra.h3>
             <Spacer />
             <chakra.h3 fontSize="md" color="background">
@@ -22,7 +28,7 @@ const CartItem = () => {
             </chakra.h3>
             <Spacer />
             <chakra.h3 fontSize="md" color="background">
-              1
+              {props.item.quantity}
             </chakra.h3>
           </Flex>
           <Flex direction="row" paddingLeft="10" width="40vw" paddingTop="2">
@@ -31,12 +37,12 @@ const CartItem = () => {
             </chakra.h3>
             <Spacer />
             <chakra.h3 fontSize="md" color="background">
-              M
+              {props.item.size}
             </chakra.h3>
           </Flex>
         </Flex>
         <Spacer />
-        <DeleteButton />
+        <DeleteButton onClick={() => props.handleRemove(props.index)} />
       </Flex>
       <Divider />
     </Box>
