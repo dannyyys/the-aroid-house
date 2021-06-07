@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Flex,
   Box,
@@ -24,6 +25,9 @@ import Details from "../components/checkout/Details";
 import Payment from "../components/checkout/Payment";
 
 function checkout() {
+  const [tabIndex, setTabIndex] = useState(0);
+  const handleTabsChange = (index) => setTabIndex(index);
+
   return (
     <Center backgroundColor="background">
       <Flex
@@ -42,13 +46,19 @@ function checkout() {
           direction="column"
           //padding="5"
         >
-          <Tabs variant="enclosed" isFitted>
+          <Tabs
+            variant="enclosed"
+            isFitted
+            index={tabIndex}
+            onChange={handleTabsChange}
+          >
             <TabList>
               <Tab
                 textColor="background"
                 _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="20px 0px 0px 0px"
+                isDisabled={tabIndex == 1 ? true : false}
               >
                 Contact
               </Tab>
@@ -57,6 +67,7 @@ function checkout() {
                 _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="0px 20px 0px 0px"
+                isDisabled={tabIndex == 0 ? true : false}
               >
                 Payment
               </Tab>
@@ -64,12 +75,12 @@ function checkout() {
             <TabPanels>
               <TabPanel color="background">
                 <Center>
-                  <Details />
+                  <Details setTabIndex={setTabIndex} />
                 </Center>
               </TabPanel>
               <TabPanel color="background" backgroundColor="text">
                 <Center>
-                  <Payment />
+                  <Payment setTabIndex={setTabIndex} />
                 </Center>
               </TabPanel>
             </TabPanels>

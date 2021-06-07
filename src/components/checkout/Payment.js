@@ -23,7 +23,7 @@ import Instructions from "./Instructions";
 import Item from "./Item";
 import Link from "next/link";
 
-const Payment = () => {
+const Payment = (props) => {
   return (
     <Flex
       direction="column"
@@ -99,9 +99,13 @@ const Payment = () => {
       </Center>
       <Instructions /> */}
 
-      <Flex direction="row" paddingTop="5" paddingRight="5">
-        <SmallButton name={"Back"} />
-        <Spacer />
+      <Flex
+        direction="row"
+        paddingTop="5"
+        paddingRight="5"
+        justifyContent="space-between"
+      >
+        <SmallButton name={"Back"} onClick={() => props.setTabIndex(0)} />
         <Link href="/thankyou">
           <SmallButton name={"Finish"} />
         </Link>

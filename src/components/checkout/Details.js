@@ -19,81 +19,43 @@ import {
 import DeleteButton from "../buttons/DeleteButton";
 import { SmallButton } from "../buttons/SmallButton";
 
-const Details = () => {
+const Details = (props) => {
   return (
     <Flex
-      direction="column"
+      direction={["column", "row"]}
+      flexWrap="wrap"
       //paddingLeft="2"
       width={["80vw", "60vw"]}
       paddingTop="2"
       paddingBottom="2"
       height="full"
     >
-      <chakra.h3 fontSize="xl" color="background">
+      <chakra.h3 marginTop="2" fontSize="xl" color="background">
         Contact details
       </chakra.h3>
-      <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="background">
-          Name
-        </chakra.h3>
-        <Spacer />
-        <Input //placeholder="medium size"
-          size="sm"
-          width="50vw"
-          backgroundColor="background"
-          border="1px"
-          borderColor="black"
-          color="text"
-        />
+      <FormControl marginTop="2" id="first-name" isRequired>
+        <FormLabel>First name</FormLabel>
+        <Input backgroundColor="background" placeholder="First name" />
+      </FormControl>
+      <FormControl marginTop="2" id="last-name" isRequired>
+        <FormLabel>Last name</FormLabel>
+        <Input backgroundColor="background" placeholder="Last name" />
+      </FormControl>
+      <FormControl marginTop="2" id="email" isRequired>
+        <FormLabel>Email Address</FormLabel>
+        <Input backgroundColor="background" placeholder="Email" />
+      </FormControl>
+      <FormControl marginTop="2" id="address" isRequired>
+        <FormLabel>Address</FormLabel>
+        <Input backgroundColor="background" placeholder="Address" />
+      </FormControl>
+      <FormControl marginTop="2" id="phone" isRequired>
+        <FormLabel>Phone Number</FormLabel>
+        <Input backgroundColor="background" placeholder="Phone#" />
+      </FormControl>
+      <Flex paddingTop="5" justifyContent="flex-end">
+        <SmallButton onClick={() => props.setTabIndex(1)} name={"Next"} />
       </Flex>
-      <Flex direction="row" align="center" padding="2">
-        <chakra.h3 fontSize="md" color="background">
-          Contact
-        </chakra.h3>
-        <Spacer />
-        <Input
-          //placeholder="medium size"
-          size="sm"
-          width="50vw"
-          backgroundColor="background"
-          border="1px"
-          borderColor="black"
-          color="text"
-        />
-      </Flex>
-      <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="background">
-          Email
-        </chakra.h3>
-        <Spacer />
-        <Input
-          //placeholder="medium size"
-          size="sm"
-          width="50vw"
-          backgroundColor="background"
-          border="1px"
-          borderColor="black"
-          color="text"
-        />
-      </Flex>
-      <Flex direction="row" padding="2" align="center">
-        <chakra.h3 fontSize="md" color="background">
-          Address
-        </chakra.h3>
-        <Spacer />
-        <Input
-          //placeholder="medium size"
-          size="sm"
-          width="50vw"
-          backgroundColor="background"
-          border="1px"
-          borderColor="black"
-          color="text"
-        />
-      </Flex>
-      <Center paddingTop="5">
-        <SmallButton name={"Next"} />
-      </Center>
     </Flex>
   );
 };
