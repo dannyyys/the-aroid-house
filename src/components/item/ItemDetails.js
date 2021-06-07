@@ -1,11 +1,93 @@
-import { chakra, Image, Flex, Center, Spacer, VStack } from "@chakra-ui/react";
+import {
+  chakra,
+  Image,
+  Flex,
+  Center,
+  Spacer,
+  VStack,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import { AddMinus } from "../buttons/AddMinus";
 import { BigButton } from "../buttons/BigButton";
 import { SizeDropDown } from "../buttons/SizeDropDown";
+import { CartContext } from "../../context/CartContext";
+import React, { useState, useContext, useEffect } from "react";
 
 export const ItemDetails = () => {
+  const toast = useToast();
+  const itemID = 5;
+  const itemName = "Slim moss pole";
+  const itemDescription = "Mose pole. damn good blah.";
+  const sizes = [
+    {
+      size: "1M",
+      price: "$15",
+    },
+    {
+      size: "0.5M",
+      price: "$10",
+    },
+  ];
+
+  const [id, setID] = useState(0);
+  const [name, setName] = useState("");
+  const [size, setSize] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
+  const [items, setItems] = useContext(CartContext);
+
+  const updateID = (e) => {
+    setID(itemID);
+  };
+
+  const updateName = (e) => {
+    setName(itemName);
+  };
+
+  const updateSize = (size) => {
+    // console.log("i was clicked", size);
+    setSize(size);
+  };
+
+  const updateQuantity = (quantity) => {
+    // setPrice(e.target.value);
+    setQuantity(quantity);
+    //console.log(quantity);
+  };
+
+  const addItem = (e) => {
+    e.preventDefault();
+    if (size != "") {
+      setItems((prevItems) => [...prevItems, { id, name, size, quantity }]);
+      toast({
+        title: "Item added",
+        description: "Item successfully added to cart",
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      toast({
+        title: "No vairant",
+        description: "Please select a variant",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+  //setName(itemName);
+
+  useEffect(() => {
+    setID(itemID);
+    setName(itemName);
+  }, []);
+
   return (
     <VStack
       direction="column"
@@ -22,37 +104,32 @@ export const ItemDetails = () => {
         fontWeight="bold"
         marginTop="5"
       >
-        Slim moss pole
+        {itemName}
       </chakra.h3>
-      <chakra.h3 color="background" fontSize="xl" paddingTop="5">
-        Mose pole. damn good blah.
-      </chakra.h3>
-      <chakra.h3 color="background" fontSize="xl" paddingTop="5">
+      <Text color="background" fontSize="xl" paddingTop="5">
+        {itemDescription}
+      </Text>
+      <Text color="background" fontSize="xl" paddingTop="5">
         Sizes:
-      </chakra.h3>
+      </Text>
       <Flex
         direction="column"
         justify="space-around"
         //width={["80vw", "20vw"]}
       >
-        <Flex direction="row">
-          <chakra.h3 color="background" fontSize="xl">
-            1M
-          </chakra.h3>
-          <Spacer />
-          <chakra.h3 color="background" fontSize="xl">
-            $15
-          </chakra.h3>
-        </Flex>
-        <Flex direction="row">
-          <chakra.h3 color="background" fontSize="xl">
-            0.5M
-          </chakra.h3>
-          <Spacer />
-          <chakra.h3 color="background" fontSize="xl">
-            $10
-          </chakra.h3>
-        </Flex>
+        {sizes.map((sizes, i) => {
+          return (
+            <Flex key={i} direction="row">
+              <Text color="background" fontSize="xl">
+                {sizes.size}
+              </Text>
+              <Spacer />
+              <Text color="background" fontSize="xl">
+                {sizes.price}
+              </Text>
+            </Flex>
+          );
+        })}
       </Flex>
       <Flex
         direction="column"
@@ -61,22 +138,22 @@ export const ItemDetails = () => {
         paddingTop="3"
       >
         <Flex direction="row" align="center">
-          <chakra.h3 color="background" fontSize="lg">
+          <Text color="background" fontSize="lg">
             Quantity
-          </chakra.h3>
+          </Text>
           <Spacer />
-          <AddMinus />
+          <AddMinus onChange={updateQuantity} />
         </Flex>
         <Flex direction="row" align="center" paddingTop="3">
-          <chakra.h3 color="background" fontSize="lg">
+          <Text color="background" fontSize="lg">
             Variants
-          </chakra.h3>
+          </Text>
           <Spacer />
-          <SizeDropDown />
+          <SizeDropDown sizes={sizes} onChange={updateSize} />
         </Flex>
       </Flex>
       <Center paddingTop="5">
-        <BigButton name={"Add to cart"} />
+        <BigButton name={"Add to cart"} onClick={addItem} />
       </Center>
     </VStack>
   );
