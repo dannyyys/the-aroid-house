@@ -56,11 +56,11 @@ function cart() {
               $40
             </chakra.h3>
           </Flex>
-          <Center paddingTop="5">
+          <Flex paddingTop="5" justifyContent="flex-end">
             <Link href="/checkout">
               <SmallButton name={"Check Out"} />
             </Link>
-          </Center>
+          </Flex>
         </Flex>
       </Flex>
     </Center>
