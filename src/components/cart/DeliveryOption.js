@@ -1,7 +1,21 @@
-import { Flex, Spacer, chakra, Checkbox, Divider, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  chakra,
+  Checkbox,
+  Divider,
+  Box,
+  RadioGroup,
+  Radio,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import DeleteButton from "../buttons/DeleteButton";
+import { useState } from "react";
 
 const DeliveryOption = () => {
+  const [boxIndex, setBoxIndex] = useState(0);
+
   return (
     <Box>
       <Flex
@@ -12,22 +26,34 @@ const DeliveryOption = () => {
         paddingBottom="2"
       >
         <Flex direction="row">
-          <Checkbox color="background" size="lg">
+          <Checkbox
+            color="background"
+            size="lg"
+            onChange={() => setBoxIndex(0)}
+            isChecked={boxIndex == 0}
+            inde
+          >
             Self collect
           </Checkbox>
           <Spacer />
-          <chakra.h3 fontSize="md" color="background">
+          <Text fontSize="md" color="background" hidden={boxIndex == 1}>
             $0
-          </chakra.h3>
+          </Text>
         </Flex>
         <Flex direction="row">
-          <Checkbox color="background" size="lg">
+          <Checkbox
+            color="background"
+            size="lg"
+            onChange={() => setBoxIndex(1)}
+            isChecked={boxIndex == 1}
+          >
             Delivery
           </Checkbox>
           <Spacer />
-          <chakra.h3 fontSize="md" color="background">
+
+          <Text fontSize="md" color="background" hidden={boxIndex == 0}>
             $10
-          </chakra.h3>
+          </Text>
         </Flex>
       </Flex>
       <Divider />
