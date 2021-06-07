@@ -1,11 +1,12 @@
 import { HStack, Button, Input, useNumberInput } from "@chakra-ui/react";
 
-export const AddMinus = () => {
+export const AddMinus = (props) => {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
       step: 1,
       defaultValue: 1,
       min: 1,
+      onChange: (_, valueAsNumber) => props.onChange(valueAsNumber),
       //max: 6,
       //precision: 2,
     });

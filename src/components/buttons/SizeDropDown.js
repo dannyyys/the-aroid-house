@@ -5,24 +5,28 @@ import {
   useNumberInput,
 } from "@chakra-ui/react";
 
-export const SizeDropDown = () => {
+export const SizeDropDown = (props) => {
   return (
     <FormControl
-      id="country"
+      id="variant"
       backgroundColor="background"
       borderRadius="5"
       maxW="150px"
     >
-      {/* <FormLabel>Country</FormLabel> */}
       <Select
         placeholder="Select variant"
         backgroundColor="buttonBackground"
         color="background"
         fontWeight="bold"
+        onChange={(e) => props.onChange(e.target.value)}
       >
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
+        {props.sizes.map((sizes, i) => {
+          return (
+            <option value={sizes.size} key={i}>
+              {sizes.size}
+            </option>
+          );
+        })}
       </Select>
     </FormControl>
   );
