@@ -6,6 +6,7 @@ import {
   chakra,
   Center,
   Divider,
+  useToast,
 } from "@chakra-ui/react";
 
 import { SmallButton } from "../components/buttons/SmallButton";
@@ -13,8 +14,28 @@ import CartItem from "../components/cart/CartItem";
 import DeliveryOption from "../components/cart/DeliveryOption";
 import { Header } from "../components/layout/Header";
 import Link from "next/link";
+import React, { useState, useContext, useEffect } from "react";
+import { CartContext } from "../context/CartContext";
 
 function cart() {
+  const toast = useToast();
+  const [items, setItems] = useContext(CartContext);
+
+  const handleRemove = (id) => {
+    const newList = items.filter((item) => items.indexOf(item) !== id);
+    //console.log(newList);
+
+    setItems(newList);
+    toast({
+      title: "Item deleted",
+      description: "Item successfully deleted from cart",
+      status: "warning",
+      duration: 1500,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
   return (
     <Center backgroundColor="background">
       <Flex
@@ -36,9 +57,17 @@ function cart() {
           <Heading fontSize="xl" color="background">
             Cart
           </Heading>
-          <CartItem />
 
-          <CartItem />
+          {items.map((item, i) => {
+            return (
+              <CartItem
+                item={item}
+                key={i}
+                handleRemove={handleRemove}
+                index={i}
+              />
+            );
+          })}
 
           <DeliveryOption />
 
