@@ -1,7 +1,10 @@
 import { chakra, Icon } from "@chakra-ui/react";
-import React from "react";
+
+import React, { useState, useContext, useEffect } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const CartButton = React.forwardRef(function Cart({ onClick, href }, ref) {
+  const [items, setItems] = useContext(CartContext);
   return (
     <span href={href} onClick={onClick} ref={ref}>
       <chakra.span pos="relative" display="inline-block">
@@ -31,7 +34,9 @@ const CartButton = React.forwardRef(function Cart({ onClick, href }, ref) {
           bg="text"
           rounded="full"
         >
-          4
+          {items.reduce((accumulator, cartItem) => {
+            return accumulator + cartItem.quantity;
+          }, 0)}
         </chakra.span>
       </chakra.span>
     </span>
