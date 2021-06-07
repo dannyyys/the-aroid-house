@@ -58,7 +58,7 @@ function checkout() {
                 _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="20px 0px 0px 0px"
-                isDisabled={tabIndex == 1 ? true : false}
+                isDisabled={tabIndex == 1}
               >
                 Contact
               </Tab>
@@ -67,7 +67,7 @@ function checkout() {
                 _selected={{ color: "background", bg: "text" }}
                 backgroundColor="secondaryBackground"
                 borderRadius="0px 20px 0px 0px"
-                isDisabled={tabIndex == 0 ? true : false}
+                isDisabled={tabIndex == 0}
               >
                 Payment
               </Tab>
