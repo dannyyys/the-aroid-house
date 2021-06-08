@@ -50,9 +50,19 @@ function cart() {
 
   const addPaymentItem = (e) => {
     //e.preventDefault();
-
-    setPaymentItem([{ items, deliveryCost }]);
-    //console.log(paymentItem);
+    if (items.length == 0) {
+      toast({
+        title: "Cart is empty",
+        description: "No item in cart",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      setPaymentItem([{ items, deliveryCost }]);
+      console.log(paymentItem);
+    }
   };
 
   // useEffect(
@@ -116,7 +126,7 @@ function cart() {
             </chakra.h3>
           </Flex>
           <Flex paddingTop="5" justifyContent="flex-end">
-            <Link href="/checkout">
+            <Link href={items.length == 0 ? "" : "/checkout"}>
               <SmallButton
                 name={"Check Out"}
                 // onClick={() => {
