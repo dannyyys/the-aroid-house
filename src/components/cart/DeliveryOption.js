@@ -13,7 +13,7 @@ import {
 import DeleteButton from "../buttons/DeleteButton";
 import { useState } from "react";
 
-const DeliveryOption = () => {
+const DeliveryOption = (props) => {
   const [boxIndex, setBoxIndex] = useState(0);
 
   return (
@@ -29,9 +29,11 @@ const DeliveryOption = () => {
           <Checkbox
             color="background"
             size="lg"
-            onChange={() => setBoxIndex(0)}
+            onChange={() => {
+              setBoxIndex(0);
+              props.onChange(0);
+            }}
             isChecked={boxIndex == 0}
-            inde
           >
             Self collect
           </Checkbox>
@@ -44,7 +46,10 @@ const DeliveryOption = () => {
           <Checkbox
             color="background"
             size="lg"
-            onChange={() => setBoxIndex(1)}
+            onChange={() => {
+              setBoxIndex(1);
+              props.onChange(1);
+            }}
             isChecked={boxIndex == 1}
           >
             Delivery
