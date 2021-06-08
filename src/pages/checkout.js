@@ -124,6 +124,7 @@ function checkout() {
                     email={email}
                     address={address}
                     phone={phone}
+                    paymentItem={paymentItem}
                   />
                 </Center>
               </TabPanel>

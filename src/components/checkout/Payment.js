@@ -34,6 +34,16 @@ const Payment = (props) => {
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
   //console.log(paymentItem[0]["items"]);
 
+  // const addPaymentItem = (e) => {
+  //   //setPaymentItem({ firstName, lastName, email, address, phone });
+  //   setPaymentItem(paymentItem);
+  //   //console.log(paymentItem);
+  // };
+
+  // useEffect(() => {
+  //   addPaymentItem();
+  // }, [paymentItem]);
+
   const handleRemove = () => {
     const newList = paymentItem.filter(
       (item) => paymentItem.indexOf(item) !== 1
@@ -102,7 +112,7 @@ const Payment = (props) => {
       </chakra.h3>
       <Divider width={["80vw", "55vw"]} />
 
-      {paymentItem[0].items.map((item, i) => {
+      {props.paymentItem[0].items.map((item, i) => {
         return <Item item={item} key={i} index={i} />;
       })}
 
@@ -114,7 +124,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
-          ${paymentItem[0].deliveryCost}
+          ${props.paymentItem[0].deliveryCost}
         </chakra.h3>
       </Flex>
       <Divider width={["80vw", "55vw"]} />
@@ -130,9 +140,9 @@ const Payment = (props) => {
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
           $
-          {paymentItem[0].items.reduce((accumulator, cartItem) => {
+          {props.paymentItem[0].items.reduce((accumulator, cartItem) => {
             return accumulator + cartItem.price;
-          }, 0) + paymentItem[0].deliveryCost}
+          }, 0) + props.paymentItem[0].deliveryCost}
         </chakra.h3>
       </Flex>
       {/* <Center padding="5">
