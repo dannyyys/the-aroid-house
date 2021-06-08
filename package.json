@@ -16,6 +16,7 @@
     "@fontsource/open-sans": "^4.4.2",
     "@lottiefiles/lottie-player": "^1.0.4",
     "@lottiefiles/react-lottie-player": "^3.3.1",
+    "formik": "^2.2.9",
     "framer-motion": "^4.0.3",
     "keen-slider": "^5.4.1",
     "next": "latest",
