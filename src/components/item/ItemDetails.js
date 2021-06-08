@@ -31,10 +31,15 @@ export const ItemDetails = () => {
       price: "$10",
     },
   ];
+  const variant = {
+    "1M": "15",
+    "0.5M": "10",
+  };
 
   const [id, setID] = useState(0);
   const [name, setName] = useState("");
   const [size, setSize] = useState("");
+  const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
   const [items, setItems] = useContext(CartContext);
@@ -52,6 +57,11 @@ export const ItemDetails = () => {
     setSize(size);
   };
 
+  const updatPrice = (price) => {
+    console.log(price);
+    setPrice(price);
+  };
+
   const updateQuantity = (quantity) => {
     // setPrice(e.target.value);
     setQuantity(quantity);
@@ -61,7 +71,10 @@ export const ItemDetails = () => {
   const addItem = (e) => {
     e.preventDefault();
     if (size != "") {
-      setItems((prevItems) => [...prevItems, { id, name, size, quantity }]);
+      setItems((prevItems) => [
+        ...prevItems,
+        { id, name, size, quantity, price },
+      ]);
       toast({
         title: "Item added",
         description: "Item successfully added to cart",
@@ -87,6 +100,12 @@ export const ItemDetails = () => {
     setID(itemID);
     setName(itemName);
   }, []);
+
+  useEffect(() => {
+    const price = quantity * variant[size];
+
+    updatPrice(price);
+  }, [size, quantity]);
 
   return (
     <VStack
@@ -117,7 +136,7 @@ export const ItemDetails = () => {
         justify="space-around"
         //width={["80vw", "20vw"]}
       >
-        {sizes.map((sizes, i) => {
+        {/* {sizes.map((sizes, i) => {
           return (
             <Flex key={i} direction="row">
               <Text color="background" fontSize="xl">
@@ -126,6 +145,19 @@ export const ItemDetails = () => {
               <Spacer />
               <Text color="background" fontSize="xl">
                 {sizes.price}
+              </Text>
+            </Flex>
+          );
+        })} */}
+        {Object.keys(variant).map((keyName, i) => {
+          return (
+            <Flex key={i} direction="row">
+              <Text color="background" fontSize="xl">
+                {keyName}
+              </Text>
+              <Spacer />
+              <Text color="background" fontSize="xl">
+                ${variant[keyName]}
               </Text>
             </Flex>
           );
@@ -149,7 +181,11 @@ export const ItemDetails = () => {
             Variants
           </Text>
           <Spacer />
-          <SizeDropDown sizes={sizes} onChange={updateSize} />
+          <SizeDropDown
+            //sizes={sizes}
+            variant={variant}
+            onChange={updateSize}
+          />
         </Flex>
       </Flex>
       <Center paddingTop="5">
