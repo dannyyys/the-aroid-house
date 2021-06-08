@@ -1,16 +1,16 @@
 import { Flex, Spacer, chakra, Divider } from "@chakra-ui/react";
 import DeleteButton from "../buttons/DeleteButton";
 
-const Item = () => {
+const Item = (props) => {
   return (
     <Flex direction="column" width={["80vw", "55vw"]} paddingBottom="2">
       <Flex direction="row" paddingLeft="5" align="center">
         <chakra.h3 fontSize="md" color="background" paddingTop="2">
-          Original moss pole
+          {props.item.name}
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
-          $20
+          $ {props.item.price}
         </chakra.h3>
       </Flex>
 
@@ -20,7 +20,7 @@ const Item = () => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
-          1
+          {props.item.quantity}
         </chakra.h3>
       </Flex>
       <Flex direction="row" paddingLeft="10" width="40vw" paddingTop="2">
@@ -29,7 +29,7 @@ const Item = () => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background" paddingBottom="2">
-          M
+          {props.item.size}
         </chakra.h3>
       </Flex>
       <Divider />
