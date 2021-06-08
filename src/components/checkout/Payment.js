@@ -34,16 +34,6 @@ const Payment = (props) => {
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
   //console.log(paymentItem[0]["items"]);
 
-  // const addPaymentItem = (e) => {
-  //   //setPaymentItem({ firstName, lastName, email, address, phone });
-  //   setPaymentItem(paymentItem);
-  //   //console.log(paymentItem);
-  // };
-
-  // useEffect(() => {
-  //   addPaymentItem();
-  // }, [paymentItem]);
-
   const handleRemove = () => {
     const newList = paymentItem.filter(
       (item) => paymentItem.indexOf(item) !== 1
