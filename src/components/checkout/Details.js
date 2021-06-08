@@ -18,6 +18,8 @@ import {
 } from "@chakra-ui/react";
 import DeleteButton from "../buttons/DeleteButton";
 import { SmallButton } from "../buttons/SmallButton";
+import { PaymentContext } from "../../context/PaymentContext";
+import React, { useState, useContext, useEffect } from "react";
 
 const Details = (props) => {
   return (
@@ -54,7 +56,14 @@ const Details = (props) => {
         <Input backgroundColor="background" placeholder="Phone#" />
       </FormControl>
       <Flex paddingTop="5" justifyContent="flex-end">
-        <SmallButton onClick={() => props.setTabIndex(1)} name={"Next"} />
+        <SmallButton
+          onClick={() => {
+            props.addPaymentItem();
+            props.setTabIndex(1);
+          }}
+          name={"Next"}
+          //onSubmit={addPaymentItem}
+        />
       </Flex>
     </Flex>
   );
