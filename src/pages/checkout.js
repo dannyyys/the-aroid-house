@@ -13,6 +13,7 @@ import {
   TabList,
   TabPanel,
   TabPanels,
+  useToast,
 } from "@chakra-ui/react";
 import DeleteButton from "../components/buttons/DeleteButton";
 import { SmallButton } from "../components/buttons/SmallButton";
@@ -26,40 +27,96 @@ import { PaymentContext } from "../context/PaymentContext";
 import React, { useState, useContext, useEffect } from "react";
 
 function checkout() {
+  const toast = useToast();
+
   const [tabIndex, setTabIndex] = useState(0);
   const handleTabsChange = (index) => setTabIndex(index);
 
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
 
-  const [firstName, setFirstName] = useState("dan");
-  const [lastName, setLastName] = useState("asd");
-  const [email, setEmail] = useState("qwe@gmail.com");
-  const [address, setAddress] = useState("blkddd");
-  const [phone, setPhone] = useState(0);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
 
-  const updateFirstName = (e) => {
-    setFirstName(itemID);
+  const updateFirstName = (firstName) => {
+    setFirstName(firstName);
   };
-  const updateLastName = (e) => {
-    setLastName(itemID);
+  const updateLastName = (lastName) => {
+    setLastName(lastName);
   };
-  const updateEmail = (e) => {
-    setEmail(itemID);
+  const updateEmail = (email) => {
+    setEmail(email);
   };
-  const updateAddress = (e) => {
-    setAddress(itemID);
+  const updateAddress = (address) => {
+    setAddress(address);
   };
-  const updatePhone = (e) => {
-    setPhone(itemID);
+  const updatePhone = (phone) => {
+    setPhone(phone);
   };
 
   const addPaymentItem = (e) => {
-    //setPaymentItem({ firstName, lastName, email, address, phone });
-    setPaymentItem((prevItems) => [
-      ...prevItems,
-      { firstName, lastName, email, address, phone },
-    ]);
+    // setPaymentItem({ firstName, lastName, email, address, phone });
+    if (firstName === "") {
+      toast({
+        title: "First name empty",
+        description: "Please fill in your first name",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else if (lastName === "") {
+      toast({
+        title: "Last name empty",
+        description: "Please fill in your last name",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else if (email === "") {
+      toast({
+        title: "Email empty",
+        description: "Please fill in your email",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else if (address === "") {
+      toast({
+        title: "Address empty",
+        description: "Please fill in your address",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else if (phone === "") {
+      toast({
+        title: "Phone empty",
+        description: "Please fill in your phone number",
+        status: "warning",
+        duration: 1500,
+        isClosable: true,
+        position: "top",
+      });
+    } else {
+      setPaymentItem((prevItems) => [
+        ...prevItems,
+        { firstName, lastName, email, address, phone },
+      ]);
+    }
+
+    // setPaymentItem((prevItems) => [
+    //   ...prevItems,
+    //   { firstName, lastName, email, address, phone },
+    // ]);
+
     console.log(paymentItem);
+    console.log(firstName, lastName, email, address, phone);
   };
 
   return (
@@ -111,7 +168,18 @@ function checkout() {
                 <Center>
                   <Details
                     setTabIndex={setTabIndex}
+                    paymentItem={paymentItem}
                     addPaymentItem={addPaymentItem}
+                    firstName={firstName}
+                    lastName={lastName}
+                    email={email}
+                    address={address}
+                    phone={phone}
+                    updateFirstName={updateFirstName}
+                    updateLastName={updateLastName}
+                    updateEmail={updateEmail}
+                    updateAddress={updateAddress}
+                    updatePhone={updatePhone}
                   />
                 </Center>
               </TabPanel>

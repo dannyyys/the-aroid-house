@@ -30,7 +30,7 @@ const Payment = (props) => {
   var email = "";
   var address = "";
   var number = 0;
-  var hello = [];
+
   var delivery = 0;
 
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
@@ -50,15 +50,15 @@ const Payment = (props) => {
   //   email = paymentItem[1].email;
   //   address = paymentItem[1].address;
   //   number = paymentItem[1].phone;
+  //   delivery = paymentItem[0].deliveryCost;
   // }, [paymentItem]);
 
-  if (paymentItem.length == 2) {
+  if (paymentItem.length != 1) {
     name = paymentItem[1].firstName + " " + paymentItem[1].lastName;
     email = paymentItem[1].email;
     address = paymentItem[1].address;
     number = paymentItem[1].phone;
     delivery = paymentItem[0].deliveryCost;
-    hello = paymentItem[0].items;
   }
 
   return (
@@ -113,7 +113,7 @@ const Payment = (props) => {
       </chakra.h3>
       <Divider width={["80vw", "55vw"]} />
 
-      {hello.map((item, i) => {
+      {paymentItem[0].items.map((item, i) => {
         return <Item item={item} key={i} index={i} />;
       })}
 
@@ -141,7 +141,7 @@ const Payment = (props) => {
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
           $
-          {hello.reduce((accumulator, cartItem) => {
+          {paymentItem[0].items.reduce((accumulator, cartItem) => {
             return accumulator + cartItem.price;
           }, 0) + delivery}
         </chakra.h3>
