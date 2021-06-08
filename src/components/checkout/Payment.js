@@ -30,6 +30,7 @@ const Payment = (props) => {
   var email = "";
   var address = "";
   var number = 0;
+  var hello = [];
 
   var delivery = 0;
 
@@ -59,6 +60,7 @@ const Payment = (props) => {
     address = paymentItem[1].address;
     number = paymentItem[1].phone;
     delivery = paymentItem[0].deliveryCost;
+    hello = paymentItem[0].items;
   }
 
   return (
@@ -113,7 +115,7 @@ const Payment = (props) => {
       </chakra.h3>
       <Divider width={["80vw", "55vw"]} />
 
-      {paymentItem[0].items.map((item, i) => {
+      {hello.map((item, i) => {
         return <Item item={item} key={i} index={i} />;
       })}
 
@@ -141,7 +143,7 @@ const Payment = (props) => {
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
           $
-          {paymentItem[0].items.reduce((accumulator, cartItem) => {
+          {hello.reduce((accumulator, cartItem) => {
             return accumulator + cartItem.price;
           }, 0) + delivery}
         </chakra.h3>
