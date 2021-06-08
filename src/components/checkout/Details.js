@@ -89,9 +89,9 @@ const Details = (props) => {
         <SmallButton
           onClick={() => {
             props.addPaymentItem();
-            if (props.paymentItem.length != 1) {
-              props.setTabIndex(1);
-            }
+            // if (props.paymentItem.length != 1) {
+            //   props.setTabIndex(1);
+            // }
           }}
           name={"Next"}
           //onSubmit={addPaymentItem}

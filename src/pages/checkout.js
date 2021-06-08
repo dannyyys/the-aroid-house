@@ -119,6 +119,12 @@ function checkout() {
     console.log(firstName, lastName, email, address, phone);
   };
 
+  // useEffect(() => {
+  //   if (paymentItem.length != 1) {
+  //     setTabIndex[1];
+  //   }
+  // }, [paymentItem, setPaymentItem]);
+
   return (
     <Center backgroundColor="background">
       <Flex
@@ -140,7 +146,7 @@ function checkout() {
           <Tabs
             variant="enclosed"
             isFitted
-            index={tabIndex}
+            index={paymentItem.length != 1 ? 1 : 0}
             onChange={handleTabsChange}
           >
             <TabList>
