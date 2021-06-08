@@ -193,12 +193,12 @@ function checkout() {
                 <Center>
                   <Payment
                     setTabIndex={setTabIndex}
-                    firstName={firstName}
-                    lastName={lastName}
-                    email={email}
-                    address={address}
-                    phone={phone}
-                    paymentItem={paymentItem}
+                    // firstName={firstName}
+                    // lastName={lastName}
+                    // email={email}
+                    // address={address}
+                    // phone={phone}
+                    //paymentItem={paymentItem}
                   />
                 </Center>
               </TabPanel>

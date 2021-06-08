@@ -54,7 +54,7 @@ const Payment = (props) => {
   //   delivery = paymentItem[0].deliveryCost;
   // }, [paymentItem]);
 
-  if (paymentItem.length != 1) {
+  if (paymentItem.length == 2) {
     name = paymentItem[1].firstName + " " + paymentItem[1].lastName;
     email = paymentItem[1].email;
     address = paymentItem[1].address;
