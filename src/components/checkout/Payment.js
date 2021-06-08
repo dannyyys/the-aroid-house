@@ -26,10 +26,12 @@ import { PaymentContext } from "../../context/PaymentContext";
 import React, { useState, useContext, useEffect } from "react";
 
 const Payment = (props) => {
-  var name;
-  var email;
-  var address;
-  var number;
+  var name = "";
+  var email = "";
+  var address = "";
+  var number = 0;
+  var hello = [];
+  var delivery = 0;
 
   const [paymentItem, setPaymentItem] = useContext(PaymentContext);
   //console.log(paymentItem[0]["items"]);
@@ -50,6 +52,15 @@ const Payment = (props) => {
   //   number = paymentItem[1].phone;
   // }, [paymentItem]);
 
+  if (paymentItem.length == 2) {
+    name = paymentItem[1].firstName + " " + paymentItem[1].lastName;
+    email = paymentItem[1].email;
+    address = paymentItem[1].address;
+    number = paymentItem[1].phone;
+    delivery = paymentItem[0].deliveryCost;
+    hello = paymentItem[0].items;
+  }
+
   return (
     <Flex
       direction="column"
@@ -67,7 +78,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background" padding="2">
-          {props.firstName}
+          {name}
         </chakra.h3>
       </Flex>
       <Flex direction={["column", "row"]}>
@@ -76,7 +87,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background" padding="2">
-          {props.phone}
+          {number}
         </chakra.h3>
       </Flex>
       <Flex direction={["column", "row"]}>
@@ -85,7 +96,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <Box fontSize="md" color="background" padding="2">
-          {props.email}
+          {email}
         </Box>
       </Flex>
       <Flex direction={["column", "row"]}>
@@ -94,7 +105,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <Box fontSize="md" color="background" padding="2">
-          {props.address}
+          {address}
         </Box>
       </Flex>
       <chakra.h3 fontSize="2xl" color="background">
@@ -102,7 +113,7 @@ const Payment = (props) => {
       </chakra.h3>
       <Divider width={["80vw", "55vw"]} />
 
-      {props.paymentItem[0].items.map((item, i) => {
+      {hello.map((item, i) => {
         return <Item item={item} key={i} index={i} />;
       })}
 
@@ -114,7 +125,7 @@ const Payment = (props) => {
         </chakra.h3>
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
-          ${props.paymentItem[0].deliveryCost}
+          ${delivery}
         </chakra.h3>
       </Flex>
       <Divider width={["80vw", "55vw"]} />
@@ -130,9 +141,9 @@ const Payment = (props) => {
         <Spacer />
         <chakra.h3 fontSize="md" color="background">
           $
-          {props.paymentItem[0].items.reduce((accumulator, cartItem) => {
+          {hello.reduce((accumulator, cartItem) => {
             return accumulator + cartItem.price;
-          }, 0) + props.paymentItem[0].deliveryCost}
+          }, 0) + delivery}
         </chakra.h3>
       </Flex>
       {/* <Center padding="5">
