@@ -102,7 +102,9 @@ const Details = () => {
             </Field>
             <Field name="email" validate={validateEmail}>
               {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                <FormControl
+                  isInvalid={form.errors.email && form.touched.email}
+                >
                   <FormLabel marginTop="2" htmlFor="email">
                     Email
                   </FormLabel>
@@ -118,7 +120,9 @@ const Details = () => {
             </Field>
             <Field name="phone" validate={validatePhone}>
               {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                <FormControl
+                  isInvalid={form.errors.phone && form.touched.phone}
+                >
                   <FormLabel marginTop="2" htmlFor="phone">
                     Phone number
                   </FormLabel>
@@ -134,7 +138,9 @@ const Details = () => {
             </Field>
             <Field name="address" validate={validateAddress}>
               {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                <FormControl
+                  isInvalid={form.errors.address && form.touched.address}
+                >
                   <FormLabel marginTop="2" htmlFor="address">
                     Address
                   </FormLabel>
