@@ -18,7 +18,7 @@ const CartItem = (props) => {
             </chakra.h3>
             <Spacer />
             <chakra.h3 fontSize="md" color="background">
-              {props.item.price}
+              ${props.item.price}
             </chakra.h3>
           </Flex>
 

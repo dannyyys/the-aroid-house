@@ -16,6 +16,10 @@ function MyApp({ Component, pageProps }) {
               useSystemColorMode: true,
             }}
           >
+            <Head>
+              <title>TheAroidHouse</title>
+              <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Component {...pageProps} />
           </ColorModeProvider>
         </ChakraProvider>
