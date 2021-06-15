@@ -6,12 +6,8 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <title>TheAroidHouse</title>
           <meta name="title" content="TheAroidHouse" />
-          <meta
-            name="description"
-            content="Trying to make gardening simple. "
-          />
+          <meta name="description" content="Trying to make gardening simple." />
 
           <meta property="og:type" content="website" />
           <meta
@@ -21,9 +17,9 @@ export default class Document extends NextDocument {
           <meta property="og:title" content="TheAroidHouse" />
           <meta
             property="og:description"
-            content="Trying to make gardening simple. "
+            content="Trying to make gardening simple."
           />
-          <meta property="og:image" content="seo_image.png" />
+          <meta property="og:image" content="/seo_image.png" />
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}

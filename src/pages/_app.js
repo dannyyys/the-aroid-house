@@ -1,4 +1,5 @@
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
+import Head from "next/head";
 import "@fontsource/merriweather/400.css";
 import "@fontsource/lora/400.css";
 import { CartProvider } from "../context/CartContext";
