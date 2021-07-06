@@ -6,7 +6,7 @@ import {
   Input,
   FormErrorMessage,
 } from "@chakra-ui/react";
-import { Formik, Form, Field, FormikProps, FormCon } from "formik";
+import { Formik, Form, Field } from "formik";
 
 function test() {
   function validateName(value) {

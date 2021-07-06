@@ -1,20 +1,19 @@
+import React, { useState, useContext } from "react";
 import {
   Flex,
   Heading,
   Spacer,
-  Button,
   chakra,
   Center,
-  Divider,
   useToast,
 } from "@chakra-ui/react";
 
-import { SmallButton } from "../components/buttons/SmallButton";
+import Link from "next/link";
+
 import CartItem from "../components/cart/CartItem";
 import DeliveryOption from "../components/cart/DeliveryOption";
+import { SmallButton } from "../components/buttons/SmallButton";
 import { Header } from "../components/layout/Header";
-import Link from "next/link";
-import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
 import { PaymentContext } from "../context/PaymentContext";
 
@@ -35,7 +34,6 @@ function cart() {
 
   const handleRemove = (id) => {
     const newList = items.filter((item) => items.indexOf(item) !== id);
-    //console.log(newList);
 
     setItems(newList);
     toast({
@@ -49,7 +47,6 @@ function cart() {
   };
 
   const addPaymentItem = (e) => {
-    //e.preventDefault();
     if (items.length == 0) {
       toast({
         title: "Cart is empty",
@@ -65,20 +62,11 @@ function cart() {
     }
   };
 
-  // useEffect(
-  //   () => {
-  //     addPaymentItem();
-  //   },
-  //   [items],
-  //   [deliveryCost]
-  // );
-
   return (
     <Center backgroundColor="background">
       <Flex
         height="100vh"
         direction="column"
-        //alignContent="center"
         backgroundColor="background"
         direction="column"
         width={["100vw", "60vw"]}
@@ -129,10 +117,6 @@ function cart() {
             <Link href={items.length == 0 ? "" : "/checkout"}>
               <SmallButton
                 name={"Check Out"}
-                // onClick={() => {
-                //   addPaymentItem;
-
-                // }}
                 onClick={addPaymentItem}
               />
             </Link>

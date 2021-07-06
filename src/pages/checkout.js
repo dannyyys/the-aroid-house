@@ -1,45 +1,31 @@
+import React, { useState, useContext } from "react";
 import {
   Flex,
-  Box,
-  Heading,
-  Spacer,
-  Button,
-  chakra,
-  Icon,
   Center,
-  Divider,
   Tab,
   Tabs,
   TabList,
   TabPanel,
   TabPanels,
-  useToast,
 } from "@chakra-ui/react";
-import DeleteButton from "../components/buttons/DeleteButton";
-import { SmallButton } from "../components/buttons/SmallButton";
-import CartItem from "../components/cart/CartItem";
-import DeliveryOption from "../components/cart/DeliveryOption";
-import { HeaderCheckout } from "../components/layout/HeaderCheckout";
-import Link from "next/link";
+
 import Details from "../components/checkout/Details";
 import Payment from "../components/checkout/Payment";
 import { PaymentContext } from "../context/PaymentContext";
-import React, { useState, useContext, useEffect } from "react";
+import { HeaderCheckout } from "../components/layout/HeaderCheckout";
+
 
 function checkout() {
-  const toast = useToast();
-
   const [tabIndex, setTabIndex] = useState(0);
   const handleTabsChange = (index) => setTabIndex(index);
 
-  const [paymentItem, setPaymentItem] = useContext(PaymentContext);
+  const [paymentItem] = useContext(PaymentContext);
 
   return (
     <Center backgroundColor="background">
       <Flex
         height="full"
         direction="column"
-        //alignContent="center"
         backgroundColor="background"
         direction="column"
         width={["100vw", "60vw"]}
@@ -50,7 +36,6 @@ function checkout() {
           height="100vh"
           borderRadius="20px 20px 0px 0px"
           direction="column"
-          //padding="5"
         >
           <Tabs
             variant="enclosed"

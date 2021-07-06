@@ -1,21 +1,13 @@
 import {
   Flex,
-  Heading,
-  Text,
-  Spacer,
-  Button,
   chakra,
   Center,
-  Divider,
 } from "@chakra-ui/react";
 
-import { SmallButton } from "../components/buttons/SmallButton";
-import CartItem from "../components/cart/CartItem";
-import DeliveryOption from "../components/cart/DeliveryOption";
-import { Header } from "../components/layout/Header";
 import Link from "next/link";
-import { HeaderCheckout } from "../components/layout/HeaderCheckout";
+
 import ThankyouAnimation from "../components/ThankyouAnimation";
+import { HeaderCheckout } from "../components/layout/HeaderCheckout";
 import { BigButton } from "../components/buttons/BigButton";
 
 function thankyou() {
@@ -24,7 +16,6 @@ function thankyou() {
       <Flex
         height="100vh"
         direction="column"
-        //align="center"
         backgroundColor="background"
         direction="column"
         width={["100vw", "60vw"]}
@@ -43,7 +34,6 @@ function thankyou() {
             fontSize="xl"
             color="background"
             align="center"
-            //marginTop="5"
           >
             Thank you for shopping with us. May your plant grow well.
           </chakra.h3>

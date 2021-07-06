@@ -1,9 +1,11 @@
-import { Text, Flex, Heading } from "@chakra-ui/react";
 import { React } from "react";
+import { Text, Flex, Heading } from "@chakra-ui/react";
+
 import Link from "next/link";
 
-import { BigButton } from "../components/buttons/BigButton";
 import Landing from "../components/Landing";
+import { BigButton } from "../components/buttons/BigButton";
+
 
 const Index = () => (
   <Flex
@@ -14,8 +16,6 @@ const Index = () => (
   >
     <Heading
       marginTop="20"
-      //textDecoration="underline"
-      //fontStyle="italic"
       color="text"
     >
       TheAroidHouse
